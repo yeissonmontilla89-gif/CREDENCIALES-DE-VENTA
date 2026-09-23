@@ -3,92 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garantía y Clientes Satisfechos</title>
-    <!-- Tailwind CSS para diseño moderno -->
+    <title>Gracias por confiar en nosotros</title>
+    <!-- Tailwind CSS para diseño minimalista -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-white text-black font-sans">
 
-    <!-- Encabezado -->
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-12 px-4 text-center shadow-lg">
-        <h1 class="text-3xl md:text-5xl font-extrabold mb-3">¡Gracias por confiar en nosotros! ✨</h1>
-        <p class="text-blue-100 text-lg max-w-2xl mx-auto">Aquí puedes comprobar nuestros envíos realizados, clientes satisfechos y los métodos de pago 100% seguros con los que trabajamos.</p>
+    <!-- Encabezado Minimalista -->
+    <header class="py-12 px-4 text-center border-b-4 border-black">
+        <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">¡Gracias por confiar en nosotros!</h1>
+        <p class="text-xl md:text-2xl font-medium">Más de 20 pedidos entregados con éxito.</p>
     </header>
 
-    <main class="max-w-5xl mx-auto px-4 py-10 space-y-12">
-
-        <!-- Indicadores de Confianza -->
-        <section class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <i class="fas fa-box-open text-4xl text-blue-600 mb-3"></i>
-                <h3 class="font-bold text-xl mb-1">+500 Envíos</h3>
-                <p class="text-gray-500 text-sm">Entregas exitosas a nivel nacional.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <i class="fas fa-shield-alt text-4xl text-green-500 mb-3"></i>
-                <h3 class="font-bold text-xl mb-1">Pagos Seguros</h3>
-                <p class="text-gray-500 text-sm">Cuentas verificadas y comprobantes.</p>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <i class="fas fa-star text-4xl text-yellow-400 mb-3"></i>
-                <h3 class="font-bold text-xl mb-1">Garantía Total</h3>
-                <p class="text-gray-500 text-sm">Soporte directo antes y después de tu compra.</p>
-            </div>
-        </section>
-
-        <!-- Métodos de Pago -->
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">💳 Métodos de Pago Autorizados</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-                <div class="p-4 border rounded-xl bg-gray-50 font-semibold text-gray-700">Nequi / Daviplata</div>
-                <div class="p-4 border rounded-xl bg-gray-50 font-semibold text-gray-700">Transferencia Bancaria</div>
-                <div class="p-4 border rounded-xl bg-gray-50 font-semibold text-gray-700">Pago Contraentrega</div>
-                <div class="p-4 border rounded-xl bg-gray-50 font-semibold text-gray-700">Tarjetas de Crédito</div>
-            </div>
-        </section>
-
-        <!-- Galería de Testimonios / Fotos -->
-        <section class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-            <h2 class="text-2xl font-bold text-gray-900 mb-2 text-center">📸 Clientes y Comprobantes de Envío</h2>
-            <p class="text-center text-gray-500 mb-8 text-sm">Algunas de las entregas y conversaciones de nuestros clientes satisfechos.</p>
-            
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <main class="max-w-5xl mx-auto px-4 py-10">
+        
+        <!-- Collage de Fotos -->
+        <section class="mb-12">
+            <!-- Cuadrícula de 6 fotos (puedes agregar más copiando las líneas) -->
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                
                 <!-- Foto 1 -->
-                <div class="overflow-hidden rounded-xl border border-gray-200">
-                    <img src="https://via.placeholder.com/400x300?text=Foto+Cliente+1" alt="Cliente" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <p class="font-semibold text-sm">Pedido entregado con éxito 📦</p>
-                    </div>
-                </div>
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+1" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+                
                 <!-- Foto 2 -->
-                <div class="overflow-hidden rounded-xl border border-gray-200">
-                    <img src="https://via.placeholder.com/400x300?text=Comprobante+de+Envio" alt="Comprobante" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <p class="font-semibold text-sm">Guía de envío confirmada 🚚</p>
-                    </div>
-                </div>
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+2" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+                
                 <!-- Foto 3 -->
-                <div class="overflow-hidden rounded-xl border border-gray-200">
-                    <img src="https://via.placeholder.com/400x300?text=Foto+Cliente+2" alt="Cliente feliz" class="w-full h-48 object-cover">
-                    <div class="p-4">
-                        <p class="font-semibold text-sm">Cliente satisfecho ⭐⭐⭐⭐⭐</p>
-                    </div>
-                </div>
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+3" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+                
+                <!-- Foto 4 -->
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+4" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+                
+                <!-- Foto 5 -->
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+5" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+                
+                <!-- Foto 6 -->
+                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+6" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
+
             </div>
         </section>
 
-        <!-- Botón a WhatsApp -->
-        <section class="text-center py-6">
-            <a href="https://wa.me/TU_NUMERO_DE_TELEFONO" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold text-lg px-8 py-4 rounded-full shadow-lg transition duration-200 transform hover:scale-105">
-                <i class="fab fa-whatsapp text-2xl mr-3"></i> ¿Tienes preguntas? Escríbenos por WhatsApp
+        <!-- Botón de Contacto (Diseño B&N) -->
+        <section class="text-center">
+            <a href="https://wa.me/TUNUMERODEWHATSAPP" target="_blank" class="inline-flex items-center justify-center bg-black text-white hover:bg-gray-800 font-bold text-lg px-8 py-4 uppercase tracking-wide border-2 border-black transition-colors">
+                <i class="fab fa-whatsapp text-2xl mr-3"></i> Contáctanos por WhatsApp
             </a>
         </section>
 
     </main>
 
-    <footer class="bg-gray-100 text-center py-6 text-gray-500 text-sm border-t border-gray-200">
-        <p>© 2026 Tu Tienda Online - Todos los derechos reservados.</p>
+    <footer class="text-center py-8 border-t-2 border-black font-bold uppercase text-sm">
+        <p>100% Seguro y Confiable</p>
     </footer>
 
 </body>

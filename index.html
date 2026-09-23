@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gracias por confiar en nosotros</title>
-    <!-- Tailwind CSS para diseño minimalista -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body class="bg-white text-black font-sans">
 
-    <!-- Encabezado Minimalista -->
     <header class="py-12 px-4 text-center border-b-4 border-black">
         <h1 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">¡Gracias por confiar en nosotros!</h1>
         <p class="text-xl md:text-2xl font-medium">Más de 20 pedidos entregados con éxito.</p>
@@ -18,34 +16,16 @@
 
     <main class="max-w-5xl mx-auto px-4 py-10">
         
-        <!-- Collage de Fotos -->
         <section class="mb-12">
-            <!-- Cuadrícula de 6 fotos (puedes agregar más copiando las líneas) -->
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
-                
-                <!-- Foto 1 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+1" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-                
-                <!-- Foto 2 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+2" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-                
-                <!-- Foto 3 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+3" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-                
-                <!-- Foto 4 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+4" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-                
-                <!-- Foto 5 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+5" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-                
-                <!-- Foto 6 -->
-                <img src="https://via.placeholder.com/500x500/000000/FFFFFF?text=Foto+6" alt="Pedido Entregado" class="w-full h-full object-cover border-2 border-black aspect-square">
-
+            <!-- Aquí aparecerán las fotos AUTOMÁTICAMENTE -->
+            <div id="galeria" class="grid grid-cols-2 md:grid-cols-3 gap-2">
+                <p class="col-span-2 md:col-span-3 text-center text-gray-500 text-lg font-bold">Cargando fotos de clientes...</p>
             </div>
         </section>
 
-        <!-- Botón de Contacto (Diseño B&N) -->
+        <!-- Botón de Contacto -->
         <section class="text-center">
+            <!-- RECUERDA CAMBIAR AQUÍ TU NÚMERO DE WHATSAPP -->
             <a href="https://wa.me/TUNUMERODEWHATSAPP" target="_blank" class="inline-flex items-center justify-center bg-black text-white hover:bg-gray-800 font-bold text-lg px-8 py-4 uppercase tracking-wide border-2 border-black transition-colors">
                 <i class="fab fa-whatsapp text-2xl mr-3"></i> Contáctanos por WhatsApp
             </a>
@@ -57,5 +37,42 @@
         <p>100% Seguro y Confiable</p>
     </footer>
 
+    <!-- SCRIPT QUE CARGA LAS FOTOS SOLAS -->
+    <script>
+        // Datos de tu repositorio
+        const usuario = 'yeissonmontilla89-gif';
+        const repositorio = 'CREDENCIALES-DE-VENTA';
+        const url = `https://api.github.com/repos/${usuario}/${repositorio}/contents/`;
+
+        fetch(url)
+            .then(response => response.json())
+            .then(data => {
+                const galeria = document.getElementById('galeria');
+                galeria.innerHTML = ''; // Quita el mensaje de "Cargando"
+
+                // Filtra solo los archivos que sean imágenes (jpg, png, jpeg)
+                const imagenes = data.filter(archivo => 
+                    archivo.name.toLowerCase().match(/\.(jpg|jpeg|png)$/)
+                );
+
+                if (imagenes.length === 0) {
+                    galeria.innerHTML = '<p class="col-span-2 md:col-span-3 text-center text-black">Aún no hay fotos subidas.</p>';
+                    return;
+                }
+
+                // Genera los cuadros del collage automáticamente
+                imagenes.forEach(img => {
+                    const imgHTML = `
+                        <div class="overflow-hidden border-2 border-black aspect-square">
+                            <img src="${img.name}" alt="Cliente" class="w-full h-full object-cover transition-transform hover:scale-110">
+                        </div>
+                    `;
+                    galeria.innerHTML += imgHTML;
+                });
+            })
+            .catch(error => {
+                document.getElementById('galeria').innerHTML = '<p class="col-span-2 md:col-span-3 text-center text-black">Error cargando las fotos. Intenta recargar la página.</p>';
+            });
+    </script>
 </body>
 </html>
